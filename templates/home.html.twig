@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <p>Logged in (<a href="/logout">logout</a>)</p>
+    {% else %}
+        <p>Logged out (<a href="{{ path('app_login') }}">login</a>)</p>
+    {% endif %}
+{% endblock %}
